@@ -5,81 +5,88 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0b0d0e">
   <meta name="robots" content="noindex,nofollow">
-  <title>Closed Test Guide — Tic Tac Toe XO : The Clean One</title>
+  <title>Closed Test — Tic Tac Toe/XO - The Clean One</title>
   <style>
-    :root{color-scheme:dark;--bg:#0b0d0e;--panel:#141819;--panel2:#101315;--text:#f6f6f2;--muted:#aab2b6;--line:#2b3236;--soft:#dfe3e4;--accent:#f3f1e9;--ok:#b9d7c2}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#20272a 0,transparent 34%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}.wrap{width:min(920px,calc(100% - 32px));margin:auto;padding:34px 0 100px}.top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:54px}.brand{font-size:13px;font-weight:900;letter-spacing:.12em}.temp{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:999px}.hero{padding:16px 0 38px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#c7cdcf}.hero h1{font-size:clamp(42px,7vw,72px);line-height:1;letter-spacing:-.05em;margin:16px 0 18px}.hero p{font-size:19px;color:var(--muted);max-width:760px;margin:0}.notice{margin-top:28px;border:1px solid #394247;background:linear-gradient(145deg,#161b1d,#111416);padding:20px 22px;border-radius:18px}.notice strong{color:var(--soft)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 8px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;border-radius:12px;padding:13px 18px;border:1px solid var(--line);transition:.18s ease}.btn:hover{transform:translateY(-1px)}.btn.primary{background:var(--accent);color:#111416;border-color:var(--accent)}.btn.secondary{background:#141819;color:var(--text)}.section{margin-top:22px;border:1px solid var(--line);background:rgba(20,24,25,.92);border-radius:20px;padding:26px}.section h2{font-size:26px;letter-spacing:-.03em;margin:0 0 18px}.steps{display:grid;gap:12px}.step{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:15px 0;border-bottom:1px solid #242b2f}.step:last-child{border-bottom:0;padding-bottom:0}.num{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;font-weight:900;color:var(--soft);background:var(--panel2)}.step h3{margin:1px 0 5px;font-size:18px}.step p{margin:0;color:var(--muted)}.good{color:var(--ok);font-weight:800}.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.check{border:1px solid #293034;border-radius:14px;padding:14px 15px;background:#111416;color:var(--muted)}.check b{display:block;color:var(--text);margin-bottom:3px}.small{color:var(--muted);font-size:14px}.footer{margin-top:42px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}.lang-switch{position:fixed;right:18px;bottom:18px;z-index:10;border:1px solid #3a4246;background:#f3f1e9;color:#111416;border-radius:999px;padding:12px 16px;font-weight:900;box-shadow:0 14px 34px rgba(0,0,0,.34);cursor:pointer}.lang-switch:hover{transform:translateY(-1px)}html[dir="rtl"] body{text-align:right}html[dir="rtl"] .step{grid-template-columns:1fr 42px}html[dir="rtl"] .num{grid-column:2}html[dir="rtl"] .step>div:last-child{grid-column:1;grid-row:1}html[dir="rtl"] .lang-switch{right:auto;left:18px}@media(max-width:680px){.wrap{width:min(100% - 24px,920px);padding-top:22px}.top{margin-bottom:34px}.hero h1{font-size:44px}.hero p{font-size:17px}.section{padding:20px}.checklist{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}}
+    :root{color-scheme:dark;--bg:#0b0d0e;--panel:#141819;--panel2:#101315;--text:#f6f6f2;--muted:#aab2b6;--line:#2b3236;--soft:#dfe3e4;--accent:#f3f1e9;--ok:#b9d7c2;--code:#e8e4d8}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#20272a 0,transparent 34%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}.wrap{width:min(960px,calc(100% - 32px));margin:auto;padding:34px 0 110px}.top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:48px}.brand{font-size:13px;font-weight:900;letter-spacing:.12em}.temp{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:999px}.hero{padding:10px 0 30px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#c7cdcf}.hero h1{font-size:clamp(40px,6vw,68px);line-height:1.02;letter-spacing:-.045em;margin:16px 0 18px;max-width:900px}.hero p{font-size:19px;color:var(--muted);max-width:800px;margin:0}.section{margin-top:22px;border:1px solid var(--line);background:rgba(20,24,25,.92);border-radius:20px;padding:26px}.section h2{font-size:26px;letter-spacing:-.03em;margin:0 0 12px}.section>p{color:var(--muted);margin:0 0 16px}.audience{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}.audience-card{border:1px solid var(--line);background:#111416;border-radius:18px;padding:22px}.audience-card h3{font-size:20px;margin:0 0 8px}.audience-card p{color:var(--muted);margin:0 0 14px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;border-radius:12px;padding:12px 16px;border:1px solid var(--line);transition:.18s ease}.btn:hover{transform:translateY(-1px)}.btn.primary{background:var(--accent);color:#111416;border-color:var(--accent)}.btn.secondary{background:#141819;color:var(--text)}.reply{margin-top:12px;border-left:3px solid #515b61;padding:10px 13px;background:#171b1d;border-radius:8px;color:var(--soft);font-size:14px}html[dir="rtl"] .reply{border-left:0;border-right:3px solid #515b61}.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.feature{border:1px solid #293034;border-radius:14px;padding:14px 15px;background:#111416;color:var(--muted)}.feature b{display:block;color:var(--text);margin-bottom:3px}.codebox{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:16px;border:1px solid #3a4246;background:linear-gradient(145deg,#171c1e,#101315);padding:20px 22px;border-radius:16px}.codecopy{font-size:14px;color:var(--muted)}.code{flex:0 0 auto;font-size:30px;font-weight:950;letter-spacing:.12em;color:#111416;background:var(--code);padding:8px 18px;border-radius:12px}.steps{display:grid;gap:12px}.step{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid #242b2f}.step:last-child{border-bottom:0;padding-bottom:0}.num{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;font-weight:900;color:var(--soft);background:var(--panel2)}.step h3{margin:1px 0 5px;font-size:18px}.step p{margin:0;color:var(--muted)}.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.check{border:1px solid #293034;border-radius:14px;padding:14px 15px;background:#111416;color:var(--muted)}.check b{display:block;color:var(--text);margin-bottom:3px}.good{color:var(--ok);font-weight:800}.small{color:var(--muted);font-size:14px}.footer{margin-top:42px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}.lang-switch{position:fixed;right:18px;bottom:18px;z-index:10;border:1px solid #3a4246;background:#f3f1e9;color:#111416;border-radius:999px;padding:12px 16px;font-weight:900;box-shadow:0 14px 34px rgba(0,0,0,.34);cursor:pointer}.lang-switch:hover{transform:translateY(-1px)}html[dir="rtl"] body{text-align:right}html[dir="rtl"] .step{grid-template-columns:1fr 42px}html[dir="rtl"] .num{grid-column:2}html[dir="rtl"] .step>div:last-child{grid-column:1;grid-row:1}@media(max-width:720px){.wrap{width:min(100% - 24px,960px);padding-top:22px}.top{margin-bottom:32px}.hero h1{font-size:42px}.hero p{font-size:17px}.section{padding:20px}.audience,.features,.checklist{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.codebox{align-items:flex-start;flex-direction:column}.lang-switch{right:12px;bottom:12px}}
   </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="top">
-      <div class="brand">MAHER9392</div>
-      <div class="temp" data-en="TEMPORARY TESTER PAGE" data-ar="صفحة مؤقتة للمختبرين">TEMPORARY TESTER PAGE</div>
-    </div>
+    <div class="top"><div class="brand">MAHER9392</div><div class="temp" data-en="TEMPORARY CLOSED TEST PAGE" data-ar="صفحة مؤقتة للاختبار المغلق">TEMPORARY CLOSED TEST PAGE</div></div>
 
     <section class="hero">
-      <div class="eyebrow" data-en="CLOSED TEST · TIC TAC TOE XO" data-ar="اختبار مغلق · TIC TAC TOE XO">CLOSED TEST · TIC TAC TOE XO</div>
-      <h1 data-en="Thanks for testing The Clean One." data-ar="شكراً لمساعدتي في اختبار The Clean One.">Thanks for testing The Clean One.</h1>
-      <p data-en="I do not need you to play perfectly. I need you to use the game normally, try things, notice what feels good or confusing, and tell me what you would change." data-ar="لا أريد منك أن تلعب بشكل مثالي. أريدك أن تستخدم اللعبة بشكل طبيعي، تجرّب الخيارات، وتلاحظ ما هو جيد أو مربك، ثم تخبرني ماذا كنت ستغيّر.">I do not need you to play perfectly. I need you to use the game normally, try things, notice what feels good or confusing, and tell me what you would change.</p>
+      <div class="eyebrow" data-en="CLOSED TEST · ANDROID" data-ar="اختبار مغلق · أندرويد">CLOSED TEST · ANDROID</div>
+      <h1>Tic Tac Toe/XO - The Clean One</h1>
+      <p data-en="This page is for people already invited to the Closed Test and for people I may invite next. Read what the game is, decide whether you want to help test it, and follow the steps below." data-ar="هذه الصفحة مخصصة للأشخاص المضافين حالياً إلى الاختبار المغلق، وللأشخاص الذين قد أضيفهم لاحقاً. اقرأ فكرة اللعبة، وإذا رغبت بالمساعدة في اختبارها فاتبع الخطوات الموجودة هنا.">This page is for people already invited to the Closed Test and for people I may invite next. Read what the game is, decide whether you want to help test it, and follow the steps below.</p>
+    </section>
 
-      <div class="notice">
-        <strong data-en="Before you start:" data-ar="قبل أن تبدأ:">Before you start:</strong>
-        <span data-en=" Make sure you are using the latest Closed Test version from Google Play. If Google Play shows an Update button, update first." data-ar=" تأكد أنك تستخدم أحدث نسخة من الاختبار المغلق من Google Play. إذا ظهر زر تحديث، حدّث اللعبة أولاً."> Make sure you are using the latest Closed Test version from Google Play. If Google Play shows an Update button, update first.</span>
-      </div>
-
-      <div class="actions">
-        <a class="btn primary" href="https://play.google.com/apps/testing/com.cleanone.tictactoe" rel="noopener" data-en="Join / Open Closed Test" data-ar="الانضمام / فتح الاختبار المغلق">Join / Open Closed Test</a>
-        <a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.cleanone.tictactoe" rel="noopener" data-en="Open on Google Play" data-ar="فتح اللعبة على Google Play">Open on Google Play</a>
+    <section class="section">
+      <h2 data-en="What is Tic Tac Toe/XO - The Clean One?" data-ar="ما هي Tic Tac Toe/XO - The Clean One؟">What is Tic Tac Toe/XO - The Clean One?</h2>
+      <p data-en="It is a clean, lightweight Tic Tac Toe/XO game built around smooth play, fair challenge, customization, and replayability rather than clutter." data-ar="هي لعبة Tic Tac Toe/XO خفيفة ونظيفة، تركّز على سلاسة اللعب، والتحدي العادل، والتخصيص، وإمكانية إعادة اللعب بدون واجهة مزدحمة.">It is a clean, lightweight Tic Tac Toe/XO game built around smooth play, fair challenge, customization, and replayability rather than clutter.</p>
+      <div class="features">
+        <div class="feature"><b data-en="Adaptive AI" data-ar="ذكاء اصطناعي متكيف">Adaptive AI</b><span data-en="Five difficulty levels." data-ar="خمسة مستويات للصعوبة.">Five difficulty levels.</span></div>
+        <div class="feature"><b data-en="More ways to play" data-ar="طرق لعب متعددة">More ways to play</b><span data-en="Classic, Endless, Local 2 Player, and boards from 3×3 to 6×6." data-ar="Classic وEndless ولعب محلي لشخصين ولوحات من 3×3 إلى 6×6.">Classic, Endless, Local 2 Player, and boards from 3×3 to 6×6.</span></div>
+        <div class="feature"><b data-en="Theme Mixer" data-ar="Theme Mixer">Theme Mixer</b><span data-en="Build and test your own visual combinations." data-ar="اصنع وجرب تركيباتك الخاصة للألوان والثيمات.">Build and test your own visual combinations.</span></div>
+        <div class="feature"><b data-en="Offline friendly" data-ar="تعمل بدون إنترنت">Offline friendly</b><span data-en="Core gameplay works offline." data-ar="اللعب الأساسي يعمل بدون اتصال بالإنترنت.">Core gameplay works offline.</span></div>
+        <div class="feature"><b data-en="Clean ad approach" data-ar="إعلانات بدون إزعاج أثناء الجولة">Clean ad approach</b><span data-en="No ads interrupt active moves during a match." data-ar="لا توجد إعلانات تقطع اللعب أثناء الجولة.">No ads interrupt active moves during a match.</span></div>
+        <div class="feature"><b data-en="Languages" data-ar="اللغات">Languages</b><span data-en="English, Arabic, and Turkish." data-ar="العربية والإنجليزية والتركية.">English, Arabic, and Turkish.</span></div>
       </div>
     </section>
 
     <section class="section">
-      <h2 data-en="What I want you to do" data-ar="ماذا أريد منك أن تفعل">What I want you to do</h2>
+      <h2 data-en="Which group are you in?" data-ar="أي حالة تنطبق عليك؟">Which group are you in?</h2>
+      <div class="audience">
+        <div class="audience-card">
+          <h3 data-en="I am already added as a tester" data-ar="أنا مضاف بالفعل كمختبر">I am already added as a tester</h3>
+          <p data-en="Use the same Google account that you gave me for Google Play. Open the Closed Test link, join if needed, then install or update the game." data-ar="استخدم نفس حساب Google الذي أرسلته لي من أجل Google Play. افتح رابط الاختبار المغلق، انضم إذا لزم الأمر، ثم ثبّت اللعبة أو حدّثها.">Use the same Google account that you gave me for Google Play. Open the Closed Test link, join if needed, then install or update the game.</p>
+          <div class="actions"><a class="btn primary" href="https://play.google.com/apps/testing/com.cleanone.tictactoe" rel="noopener" data-en="Join / Open Closed Test" data-ar="الانضمام / فتح الاختبار المغلق">Join / Open Closed Test</a><a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.cleanone.tictactoe" rel="noopener" data-en="Open on Google Play" data-ar="فتح اللعبة على Google Play">Open on Google Play</a></div>
+        </div>
+        <div class="audience-card">
+          <h3 data-en="I am not added yet" data-ar="لم تتم إضافتي بعد">I am not added yet</h3>
+          <p data-en="If the game interests you and you are willing to test it, reply to the person who sent you this page and send the Gmail / Google account email you use in Google Play. I need that email to grant Closed Test access." data-ar="إذا أعجبتك فكرة اللعبة وترغب بالمشاركة في اختبارها، ارجع للشخص الذي أرسل لك هذا الرابط وأرسل له بريد Gmail / حساب Google الذي تستخدمه في Google Play. أحتاج هذا البريد حتى أفتح لك صلاحية الدخول للاختبار المغلق.">If the game interests you and you are willing to test it, reply to the person who sent you this page and send the Gmail / Google account email you use in Google Play. I need that email to grant Closed Test access.</p>
+          <div class="reply" data-en="You can reply: “I want to test Tic Tac Toe/XO - The Clean One. My Google Play email is: ______”" data-ar="يمكنك الرد هكذا: «أريد اختبار Tic Tac Toe/XO - The Clean One. بريدي المستخدم في Google Play هو: ______»">You can reply: “I want to test Tic Tac Toe/XO - The Clean One. My Google Play email is: ______”</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-en="Tester code" data-ar="رمز المختبر">Tester code</h2>
+      <p data-en="After you have access to the test version, use the code below when the game asks for the tester code. It enables tester-only tools for theme testing and submission, and lets you test the game without ads. This is temporary testing access, not a purchase." data-ar="بعد حصولك على صلاحية نسخة الاختبار، استخدم الرمز الموجود أدناه عندما تطلب اللعبة رمز المختبر. هذا يفعّل أدوات المختبر اللازمة لتجربة وإرسال الثيمات، ويسمح لك بتجربة اللعبة بدون إعلانات. هذه صلاحية اختبار مؤقتة وليست عملية شراء.">After you have access to the test version, use the code below when the game asks for the tester code. It enables tester-only tools for theme testing and submission, and lets you test the game without ads. This is temporary testing access, not a purchase.</p>
+      <div class="codebox"><div class="codecopy" data-en="Tester access code" data-ar="رمز دخول المختبر">Tester access code</div><div class="code">123</div></div>
+    </section>
+
+    <section class="section">
+      <h2 data-en="What I want you to test" data-ar="ماذا أريد منك أن تختبر">What I want you to test</h2>
       <div class="steps">
-        <div class="step">
-          <div class="num">1</div>
-          <div><h3 data-en="Play normally" data-ar="العب بشكل طبيعي">Play normally</h3><p data-en="Try several rounds. Test different AI difficulties, Classic or Endless mode, local 2-player if possible, and more than one board size." data-ar="العب عدة جولات. جرّب أكثر من مستوى للذكاء الاصطناعي، ووضع Classic أو Endless، واللعب المحلي لشخصين إن أمكن، وأكثر من حجم للوحة.">Try several rounds. Test different AI difficulties, Classic or Endless mode, local 2-player if possible, and more than one board size.</p></div>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <div><h3 data-en="Create your own theme" data-ar="اصنع ثيم خاص بك">Create your own theme</h3><p data-en="Open the Theme Mixer, make a combination you actually like, give the theme a name, then use Send Theme. Please send at least one theme. If sending fails, tell me exactly what happened." data-ar="افتح Theme Mixer، واصنع تركيبة تعجبك فعلاً، ثم أعطِ الثيم اسماً واستخدم Send Theme. أرسل ثيماً واحداً على الأقل. إذا فشل الإرسال، أخبرني بالضبط ماذا حصل.">Open the Theme Mixer, make a combination you actually like, give the theme a name, then use Send Theme. Please send at least one theme. If sending fails, tell me exactly what happened.</p></div>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <div><h3 data-en="Try to break things" data-ar="حاول أن تكتشف المشاكل">Try to break things</h3><p data-en="Change modes, board sizes, language, themes and settings. Go back and forth between screens. If something looks wrong, freezes, resets unexpectedly, or behaves differently than you expected, report it." data-ar="بدّل بين أوضاع اللعب، وأحجام اللوحة، واللغة، والثيمات، والإعدادات. تنقّل بين الصفحات. إذا ظهر شيء بشكل خاطئ، أو علقت اللعبة، أو انمسح شيء بدون توقع، أو تصرف خيار بشكل غير منطقي، أخبرني.">Change modes, board sizes, language, themes and settings. Go back and forth between screens. If something looks wrong, freezes, resets unexpectedly, or behaves differently than you expected, report it.</p></div>
-        </div>
-        <div class="step">
-          <div class="num">4</div>
-          <div><h3 data-en="Give me your real opinion" data-ar="أعطني رأيك الحقيقي">Give me your real opinion</h3><p data-en="Tell me what you liked, what you disliked, what was confusing, what felt unnecessary, and what you think is missing. Suggestions are welcome even if they are small." data-ar="قل لي ما الذي أعجبك، وما الذي لم يعجبك، وما الذي كان مربكاً، وما الذي شعرت أنه غير ضروري، وما الذي تعتقد أنه ناقص. حتى الاقتراحات الصغيرة تهمني.">Tell me what you liked, what you disliked, what was confusing, what felt unnecessary, and what you think is missing. Suggestions are welcome even if they are small.</p></div>
-        </div>
-        <div class="step">
-          <div class="num">5</div>
-          <div><h3 data-en="Rate the experience" data-ar="قيّم التجربة">Rate the experience</h3><p data-en="Give the current test version a score from 1 to 5 and tell me the main reason for your score. Please judge the game as it is now, not based on features you hope may be added later." data-ar="أعطِ نسخة الاختبار الحالية تقييماً من 1 إلى 5، واذكر أهم سبب لهذا التقييم. قيّم اللعبة كما هي الآن، وليس بناءً على ميزات تتمنى إضافتها مستقبلاً.">Give the current test version a score from 1 to 5 and tell me the main reason for your score. Please judge the game as it is now, not based on features you hope may be added later.</p></div>
-        </div>
+        <div class="step"><div class="num">1</div><div><h3 data-en="Play normally" data-ar="العب بشكل طبيعي">Play normally</h3><p data-en="Play several rounds and try different AI difficulties, Classic and Endless, Local 2 Player if possible, and more than one board size." data-ar="العب عدة جولات وجرّب مستويات مختلفة للذكاء الاصطناعي، وClassic وEndless، واللعب المحلي لشخصين إن أمكن، وأكثر من حجم للوحة.">Play several rounds and try different AI difficulties, Classic and Endless, Local 2 Player if possible, and more than one board size.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h3 data-en="Create, name, and send a theme" data-ar="اصنع ثيماً، سمّه، ثم أرسله">Create, name, and send a theme</h3><p data-en="Open Theme Mixer, create a combination you genuinely like, give it a name, and send it through the tester theme submission. Please send at least one theme." data-ar="افتح Theme Mixer، واصنع تركيبة تعجبك فعلاً، أعطِ الثيم اسماً، ثم أرسله من خلال ميزة إرسال الثيم للمختبرين. أرسل ثيماً واحداً على الأقل.">Open Theme Mixer, create a combination you genuinely like, give it a name, and send it through the tester theme submission. Please send at least one theme.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h3 data-en="Look for bugs" data-ar="ابحث عن الأخطاء">Look for bugs</h3><p data-en="Change modes, board sizes, languages, themes, and settings. Move between screens. Report freezes, unexpected resets, visual problems, or anything that behaves differently than expected." data-ar="بدّل بين أوضاع اللعب، وأحجام اللوحة، واللغات، والثيمات، والإعدادات، وتنقّل بين الصفحات. أبلغني عن أي تعليق، أو إعادة ضبط غير متوقعة، أو مشكلة بصرية، أو أي تصرف غير منطقي.">Change modes, board sizes, languages, themes, and settings. Move between screens. Report freezes, unexpected resets, visual problems, or anything that behaves differently than expected.</p></div></div>
+        <div class="step"><div class="num">4</div><div><h3 data-en="Give your real opinion" data-ar="أعطني رأيك الحقيقي">Give your real opinion</h3><p data-en="Tell me what you liked, disliked, found confusing, found unnecessary, or think is missing. Small suggestions are useful too." data-ar="قل لي ما الذي أعجبك، وما الذي لم يعجبك، وما الذي وجدته مربكاً أو غير ضروري، وما الذي تعتقد أنه ناقص. حتى الاقتراحات الصغيرة مفيدة.">Tell me what you liked, disliked, found confusing, found unnecessary, or think is missing. Small suggestions are useful too.</p></div></div>
+        <div class="step"><div class="num">5</div><div><h3 data-en="Rate the current version" data-ar="قيّم النسخة الحالية">Rate the current version</h3><p data-en="Give Tic Tac Toe/XO - The Clean One a score from 1 to 5 and tell me the main reason for your score." data-ar="أعطِ Tic Tac Toe/XO - The Clean One تقييماً من 1 إلى 5، واذكر أهم سبب لهذا التقييم.">Give Tic Tac Toe/XO - The Clean One a score from 1 to 5 and tell me the main reason for your score.</p></div></div>
       </div>
     </section>
 
     <section class="section">
       <h2 data-en="Things worth checking" data-ar="أشياء مهم تجربها">Things worth checking</h2>
       <div class="checklist">
-        <div class="check"><b data-en="AI difficulty" data-ar="صعوبة الذكاء الاصطناعي">AI difficulty</b><span data-en="Does each level feel different and fair?" data-ar="هل تشعر أن كل مستوى مختلف وعادل؟">Does each level feel different and fair?</span></div>
-        <div class="check"><b data-en="Themes" data-ar="الثيمات">Themes</b><span data-en="Are colors readable and pleasant?" data-ar="هل الألوان واضحة ومريحة؟">Are colors readable and pleasant?</span></div>
+        <div class="check"><b data-en="AI difficulty" data-ar="صعوبة الذكاء الاصطناعي">AI difficulty</b><span data-en="Do the five levels feel meaningfully different and fair?" data-ar="هل تشعر أن المستويات الخمسة مختلفة بشكل واضح وعادلة؟">Do the five levels feel meaningfully different and fair?</span></div>
+        <div class="check"><b data-en="Themes" data-ar="الثيمات">Themes</b><span data-en="Are the colors readable and pleasant? Is Theme Mixer easy to understand?" data-ar="هل الألوان واضحة ومريحة؟ وهل Theme Mixer سهل الفهم؟">Are the colors readable and pleasant? Is Theme Mixer easy to understand?</span></div>
         <div class="check"><b data-en="Menus and controls" data-ar="القوائم والأزرار">Menus and controls</b><span data-en="Is anything hard to find or understand?" data-ar="هل يوجد شيء صعب الوصول إليه أو فهمه؟">Is anything hard to find or understand?</span></div>
-        <div class="check"><b data-en="Different board sizes" data-ar="أحجام اللوحة المختلفة">Different board sizes</b><span data-en="Does the layout stay clean from 3×3 to 6×6?" data-ar="هل يبقى التصميم مرتباً من 3×3 إلى 6×6؟">Does the layout stay clean from 3×3 to 6×6?</span></div>
-        <div class="check"><b data-en="Language" data-ar="اللغة">Language</b><span data-en="Look for awkward text, clipping, or RTL issues." data-ar="لاحظ أي نص غريب أو مقصوص أو مشاكل في اتجاه العربية.">Look for awkward text, clipping, or RTL issues.</span></div>
-        <div class="check"><b data-en="Return experience" data-ar="الرغبة بالعودة للعبة">Return experience</b><span data-en="Would you open the game again later? Why or why not?" data-ar="هل ستفتح اللعبة مرة أخرى لاحقاً؟ لماذا أو لماذا لا؟">Would you open the game again later? Why or why not?</span></div>
+        <div class="check"><b data-en="Board sizes" data-ar="أحجام اللوحة">Board sizes</b><span data-en="Does the layout stay clean from 3×3 to 6×6?" data-ar="هل يبقى التصميم مرتباً من 3×3 إلى 6×6؟">Does the layout stay clean from 3×3 to 6×6?</span></div>
+        <div class="check"><b data-en="Languages" data-ar="اللغات">Languages</b><span data-en="Look for awkward text, clipping, or Arabic RTL problems." data-ar="لاحظ أي نص غريب أو مقصوص أو مشاكل في اتجاه العربية RTL.">Look for awkward text, clipping, or Arabic RTL problems.</span></div>
+        <div class="check"><b data-en="Would you return?" data-ar="هل سترجع للعبة؟">Would you return?</b><span data-en="Would you open the game again after the test? Why or why not?" data-ar="هل ستفتح اللعبة مرة أخرى بعد الاختبار؟ لماذا أو لماذا لا؟">Would you open the game again after the test? Why or why not?</span></div>
       </div>
     </section>
 
     <section class="section">
-      <h2 data-en="How to report feedback" data-ar="كيف ترسل ملاحظاتك">How to report feedback</h2>
-      <p data-en="Use the feedback / bug-report option inside the game when possible. For a bug, include what you were doing immediately before it happened. Screenshots are very helpful." data-ar="استخدم خيار الملاحظات أو الإبلاغ عن مشكلة داخل اللعبة إن أمكن. عند وجود خطأ، اذكر ماذا كنت تفعل مباشرة قبل حدوثه. صور الشاشة مفيدة جداً.">Use the feedback / bug-report option inside the game when possible. For a bug, include what you were doing immediately before it happened. Screenshots are very helpful.</p>
-      <p class="small" data-en="Please do not share this temporary tester page publicly. It is intended for people participating in the Closed Test." data-ar="يرجى عدم نشر صفحة المختبرين المؤقتة بشكل عام. هذه الصفحة مخصصة للمشاركين في الاختبار المغلق.">Please do not share this temporary tester page publicly. It is intended for people participating in the Closed Test.</p>
-      <p class="good" data-en="Thank you. Useful criticism helps more than polite praise." data-ar="شكراً لك. الملاحظة الصريحة والمفيدة أهم من المجاملة.">Thank you. Useful criticism helps more than polite praise.</p>
+      <h2 data-en="How to send feedback" data-ar="كيف ترسل ملاحظاتك">How to send feedback</h2>
+      <p data-en="Use the feedback or bug-report tools inside Tic Tac Toe/XO - The Clean One whenever possible. For a bug, tell me what you were doing immediately before it happened. Screenshots are very helpful." data-ar="استخدم أدوات الملاحظات أو الإبلاغ عن مشكلة داخل Tic Tac Toe/XO - The Clean One متى أمكن. عند وجود خطأ، اذكر ماذا كنت تفعل مباشرة قبل حدوثه. صور الشاشة مفيدة جداً.">Use the feedback or bug-report tools inside Tic Tac Toe/XO - The Clean One whenever possible. For a bug, tell me what you were doing immediately before it happened. Screenshots are very helpful.</p>
+      <p class="small" data-en="Please do not post this temporary tester page publicly. It is intended for people being considered for, or participating in, the Closed Test." data-ar="يرجى عدم نشر صفحة المختبرين المؤقتة بشكل عام. هذه الصفحة مخصصة للأشخاص المرشحين للمشاركة أو المشاركين فعلياً في الاختبار المغلق.">Please do not post this temporary tester page publicly. It is intended for people being considered for, or participating in, the Closed Test.</p>
+      <p class="good" data-en="Useful criticism helps more than polite praise. Thank you for helping improve Tic Tac Toe/XO - The Clean One." data-ar="الملاحظة الصريحة والمفيدة أهم من المجاملة. شكراً لمساعدتك في تحسين Tic Tac Toe/XO - The Clean One.">Useful criticism helps more than polite praise. Thank you for helping improve Tic Tac Toe/XO - The Clean One.</p>
     </section>
 
-    <div class="footer">© 2026 MAHER9392 · Tic Tac Toe XO : The Clean One</div>
+    <div class="footer">© 2026 MAHER9392 · Tic Tac Toe/XO - The Clean One</div>
   </main>
 
   <button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">العربية</button>
@@ -87,17 +94,10 @@
     const root=document.documentElement;
     const button=document.getElementById('langSwitch');
     const nodes=[...document.querySelectorAll('[data-en][data-ar]')];
-    function setLang(lang){
-      const ar=lang==='ar';
-      root.lang=ar?'ar':'en';
-      root.dir=ar?'rtl':'ltr';
-      nodes.forEach(el=>el.textContent=ar?el.dataset.ar:el.dataset.en);
-      button.textContent=ar?'English':'العربية';
-      try{localStorage.setItem('testerLang',lang)}catch(e){}
-    }
+    function setLang(lang){const ar=lang==='ar';root.lang=ar?'ar':'en';root.dir=ar?'rtl':'ltr';nodes.forEach(el=>el.textContent=ar?el.dataset.ar:el.dataset.en);button.textContent=ar?'English':'العربية';try{localStorage.setItem('testerLang',lang)}catch(e){}}
     let saved=null;try{saved=localStorage.getItem('testerLang')}catch(e){}
-    const initial=saved||(navigator.language||'').toLowerCase().startsWith('ar')?'ar':'en';
-    setLang(initial);
+    const browserArabic=(navigator.language||'').toLowerCase().startsWith('ar');
+    setLang(saved||(browserArabic?'ar':'en'));
     button.addEventListener('click',()=>setLang(root.lang==='ar'?'en':'ar'));
   </script>
 </body>
