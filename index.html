@@ -3,53 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0b0d0e">
-  <meta name="description" content="Official MAHER9392 developer site for Tic Tac Toe/XO - The Clean One on Android.">
+  <meta name="theme-color" content="#090b15">
+  <meta name="description" content="Tic Tac Toe/XO - The Clean One. A focused Android XO game with Adaptive AI, local two-player, Endless, thoughtful themes and offline play.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tic Tac Toe/XO - The Clean One · MAHER9392">
+  <meta property="og:description" content="Less noise. More play. Adaptive AI, thoughtful themes and local two-player XO on Android.">
   <link rel="canonical" href="https://maher9392.github.io/">
-  <title>MAHER9392 — Tic Tac Toe/XO - The Clean One</title>
-  <style>
-    :root{color-scheme:dark;--bg:#0b0d0e;--panel:#141819;--text:#f7f7f3;--muted:#a7afb2;--line:#2a3033;--accent:#f3f1e9}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#20272a 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}nav{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:14px;font-weight:900;letter-spacing:.1em}.navlinks{display:flex;gap:22px}.navlinks a,.footer a{color:var(--muted);text-decoration:none}.navlinks a:hover,.footer a:hover{color:var(--text)}.hero{min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;padding:72px 0 90px}.hero-inner{max-width:900px;margin:auto}.eyebrow{color:#c5cbcd;font-size:12px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(54px,8vw,94px);line-height:.94;letter-spacing:-.06em;margin:18px 0 20px}.hero h1 .sub{display:block;color:#dfe2e2;font-size:.62em;margin-top:14px}.hero p{max-width:760px;margin:0 auto;color:var(--muted);font-size:clamp(17px,1.8vw,21px)}.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;border:1px solid var(--line);text-decoration:none;font-weight:750;transition:.18s ease}.btn:hover{transform:translateY(-1px)}.btn.primary{background:var(--accent);color:#101213;border-color:var(--accent)}.btn.secondary{color:var(--text);background:#131719}.features{padding:0 0 92px}.section-title{font-size:38px;letter-spacing:-.045em;margin:0 0 24px;text-align:center}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);background:rgba(19,23,25,.9);border-radius:18px;padding:24px;min-height:168px}.card h3{margin:0 0 8px;font-size:18px}.card p{margin:0;color:var(--muted)}.legal{padding:0 0 88px}.legalbox{border:1px solid var(--line);border-radius:22px;padding:28px;background:var(--panel);text-align:center}.legalbox h2{margin:0 0 7px}.legalbox p{margin:0 0 18px;color:var(--muted)}.links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:14px}@media(max-width:760px){.wrap{width:min(100% - 28px,680px)}.navlinks{gap:14px}.hero{min-height:auto;padding:56px 0 72px}.hero h1{font-size:clamp(48px,14vw,72px)}.grid{grid-template-columns:1fr}.section-title{text-align:left}}
-  </style>
+  <link rel="stylesheet" href="assets/site.css?v=20261014">
+  <title>Tic Tac Toe/XO - The Clean One — MAHER9392</title>
 </head>
-<body>
-  <div class="wrap">
-    <nav>
-      <div class="brand">MAHER9392</div>
-      <div class="navlinks"><a href="#game">Game</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></div>
+<body class="site site-home">
+  <header class="nav-shell">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="wordmark" href="index.html">MAHER<span>9392</span></a>
+      <div class="nav-links">
+        <a href="#game" aria-current="page">Game</a>
+        <a href="#features">Features</a>
+        <a href="#themes">Themes</a>
+        <a href="support.html">Support</a>
+        <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.cleanone.tictactoe" rel="noopener">Google Play ↗</a>
+      </div>
     </nav>
-    <main>
-      <section class="hero" id="game">
-        <div class="hero-inner">
-          <div class="eyebrow">Android game · Clean by design</div>
-          <h1>Tic Tac Toe/XO <span class="sub">- The Clean One</span></h1>
-          <p>A focused Tic Tac Toe/XO experience built around fair challenge, smooth play, thoughtful themes, and a clean board from the first move to the last.</p>
+  </header>
+  <main>
+    <div class="wrap">
+      <section class="main-hero" id="game" aria-labelledby="hero-title">
+        <div>
+          <div class="pill">Android · Made to stay simple</div>
+          <h1 id="hero-title"><span class="quiet">Tic Tac Toe/XO</span><span class="bright">The Clean One.</span></h1>
+          <p class="lede">A familiar game, with a little more room to think. Adaptive challenge, calm visuals, plenty of themes — and nothing between you and your next move.</p>
           <div class="buttons">
-            <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.cleanone.tictactoe" rel="noopener">View on Google Play</a>
-            <a class="btn secondary" href="privacy.html">Privacy Policy</a>
+            <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.cleanone.tictactoe" rel="noopener">Get it on Google Play ↗</a>
+            <a class="btn secondary" href="#features">Explore the game ↓</a>
+          </div>
+          <div class="hero-micro"><span>Offline play</span><span>Local 2 player</span><span>No mid-game ads</span></div>
+        </div>
+        <div>
+          <div class="showcase" id="themeShowcase" data-theme="moonlight" aria-label="Interactive visual preview of the game's Moonlight, Orchid and light palettes">
+            <div class="glow-dot"><i></i><span>THE CLEAN ONE / XO</span></div>
+            <div class="device" aria-hidden="true">
+              <div class="camera"></div>
+              <div class="device-screen">
+                <div class="phone-status"><span>9:41</span><span>◆ ▰ ▴</span></div>
+                <div class="phone-actions">◉ ⋯</div>
+                <div class="phone-score"><span>0</span><span class="x">×</span><small>You</small><small>•</small><small>AI</small><span class="o">○</span><span>0</span></div>
+                <div class="phone-turn"><span class="x">×</span> Your turn</div>
+                <div class="phone-board">
+                  <b class="x">×</b><b></b><b class="o">○</b>
+                  <b class="o">○</b><b class="x">×</b><b></b>
+                  <b></b><b class="o">○</b><b class="x">×</b>
+                </div>
+                <div class="phone-bottom"><span>↶ Undo</span><span>〉 New round</span><span>↻ Reset score</span></div>
+                <div class="phone-chin"></div>
+              </div>
+            </div>
+            <div class="caption">A visual preview inspired by the current game UI</div>
+            <div class="theme-controls" role="group" aria-label="Preview different color themes">
+              <button type="button" data-select-theme="moonlight" aria-pressed="true">Moonlight</button>
+              <button type="button" data-select-theme="orchid" aria-pressed="false">Orchid</button>
+              <button type="button" data-select-theme="paper" aria-pressed="false">Light</button>
+            </div>
           </div>
         </div>
       </section>
-      <section class="features">
-        <h2 class="section-title">Clean play. More depth.</h2>
-        <div class="grid">
-          <article class="card"><h3>Adaptive AI</h3><p>Five difficulty levels, from relaxed rounds to a much tougher challenge.</p></article>
-          <article class="card"><h3>More ways to play</h3><p>Classic and Endless modes, local two-player play, and boards from 3×3 to 6×6.</p></article>
-          <article class="card"><h3>Offline friendly</h3><p>Core gameplay works offline and normal play does not require an account.</p></article>
-          <article class="card"><h3>Theme system</h3><p>Curated themes plus a Theme Mixer for building your own visual combination.</p></article>
-          <article class="card"><h3>No mid-game ads</h3><p>Ads are kept away from active moves so a match stays uninterrupted.</p></article>
-          <article class="card"><h3>Three languages</h3><p>English, العربية, and Türkçe are supported directly in the game.</p></article>
+    </div>
+
+    <section id="features" class="feature-block">
+      <div class="wrap">
+        <div class="feature-heading">
+          <div><div class="eyebrow">What's inside</div><h2 class="section-h">Less noise. More play.</h2></div>
+          <p>Everything you need for a quick match. And just enough depth to keep the next one interesting.</p>
         </div>
-      </section>
-      <section class="legal">
-        <div class="legalbox">
-          <h2>Official developer site</h2>
-          <p>MAHER9392 · Tic Tac Toe/XO - The Clean One</p>
-          <div class="links"><a class="btn secondary" href="privacy.html">Privacy Policy</a><a class="btn secondary" href="support.html">Support</a></div>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="number">01 / CHALLENGE</span><h3>Adaptive AI</h3><p>The challenge adjusts as you play. Or choose Easy, Normal, Hard, or Perfect yourself.</p><span class="corner" aria-hidden="true">×</span></article>
+          <article class="feature-card"><span class="number">02 / TOGETHER</span><h3>Pass. Play. Repeat.</h3><p>Two players, one device. Local matches without accounts or matchmaking.</p><span class="corner" aria-hidden="true">○</span></article>
+          <article class="feature-card"><span class="number">03 / MORE SPACE</span><h3>From 3×3 to 6×6</h3><p>Classic boards or bigger spaces for a different kind of XO challenge.</p><span class="corner" aria-hidden="true">#</span></article>
+          <article class="feature-card"><span class="number">04 / YOUR PACE</span><h3>Classic &amp; Endless</h3><p>Play one quick round or keep your session going in Endless mode.</p><span class="corner" aria-hidden="true">∞</span></article>
+          <article class="feature-card"><span class="number">05 / ANYWHERE</span><h3>Offline friendly</h3><p>Core gameplay works without an internet connection and needs no account.</p><span class="corner" aria-hidden="true">◌</span></article>
+          <article class="feature-card"><span class="number">06 / FLOW</span><h3>No mid-game ads</h3><p>Active moves stay uninterrupted. The focus stays on your board.</p><span class="corner" aria-hidden="true">·</span></article>
         </div>
+      </div>
+    </section>
+
+    <section id="themes" class="feature-block">
+      <div class="wrap">
+        <div class="feature-heading">
+          <div><div class="eyebrow">Find your color</div><h2 class="section-h">A theme for every mood.</h2></div>
+          <p>From clean light palettes to bold dark glow. Explore curated styles, then make your own with Theme Mixer.</p>
+        </div>
+        <div class="theme-gallery">
+          <article class="theme-card paper"><div><h3>Light &amp; clear</h3><p>A calmer side of XO</p></div><div class="icons"><i>×</i><i>○</i></div></article>
+          <article class="theme-card orchid"><div><h3>Orchid</h3><p>Soft glow after dark</p></div><div class="icons"><i>×</i><i>○</i></div></article>
+          <article class="theme-card moonlight"><div><h3>Moonlight</h3><p>AMOLED black, turquoise &amp; lavender</p></div><div class="icons"><i>×</i><i>○</i></div></article>
+        </div>
+      </div>
+    </section>
+    <div class="wrap">
+      <section class="wide-cta">
+        <div><div class="eyebrow">Your next move</div><h2>Small game. Plenty of ways to play.</h2><p>Tic Tac Toe/XO - The Clean One · English · العربية · Türkçe</p></div>
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.cleanone.tictactoe" rel="noopener">Open on Google Play ↗</a>
       </section>
-    </main>
-    <footer class="footer"><span>© 2026 MAHER9392</span><span><a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></span></footer>
-  </div>
+    </div>
+  </main>
+  <footer class="site-footer wrap">
+    <div>© 2026 MAHER9392 · Independent Android game developer</div>
+    <div class="footer-links"><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a><a href="https://play.google.com/store/apps/details?id=com.cleanone.tictactoe" rel="noopener">Google Play ↗</a></div>
+  </footer>
+  <script>
+    (function(){
+      const stage=document.getElementById('themeShowcase');
+      stage.querySelectorAll('[data-select-theme]').forEach(function(button){
+        button.addEventListener('click',function(){
+          stage.dataset.theme=button.dataset.selectTheme;
+          stage.querySelectorAll('[data-select-theme]').forEach(function(other){
+            other.setAttribute('aria-pressed',String(other===button));
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
