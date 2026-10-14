@@ -9,7 +9,7 @@
   <meta property="og:title" content="Tic Tac Toe/XO - The Clean One · MAHER9392">
   <meta property="og:description" content="Less noise. More play. Adaptive AI, thoughtful themes and local two-player XO on Android.">
   <link rel="canonical" href="https://maher9392.github.io/">
-  <link rel="stylesheet" href="assets/site.css?v=20261014">
+  <link rel="stylesheet" href="assets/site.css?v=20261015">
   <title>Tic Tac Toe/XO - The Clean One — MAHER9392</title>
 </head>
 <body class="site site-home">
@@ -41,23 +41,17 @@
         <div>
           <div class="showcase" id="themeShowcase" data-theme="moonlight" aria-label="Interactive visual preview of the game's Moonlight, Orchid and light palettes">
             <div class="glow-dot"><i></i><span>THE CLEAN ONE / XO</span></div>
-            <div class="device" aria-hidden="true">
-              <div class="camera"></div>
-              <div class="device-screen">
-                <div class="phone-status"><span>9:41</span><span>◆ ▰ ▴</span></div>
-                <div class="phone-actions">◉ ⋯</div>
-                <div class="phone-score"><span>0</span><span class="x">×</span><small>You</small><small>•</small><small>AI</small><span class="o">○</span><span>0</span></div>
-                <div class="phone-turn"><span class="x">×</span> Your turn</div>
-                <div class="phone-board">
-                  <b class="x">×</b><b></b><b class="o">○</b>
-                  <b class="o">○</b><b class="x">×</b><b></b>
-                  <b></b><b class="o">○</b><b class="x">×</b>
-                </div>
-                <div class="phone-bottom"><span>↶ Undo</span><span>〉 New round</span><span>↻ Reset score</span></div>
-                <div class="phone-chin"></div>
-              </div>
+            <div class="hero-ambient" aria-hidden="true">
+              <span class="ambient-moonlight"></span>
+              <span class="ambient-orchid"></span>
+              <span class="ambient-paper"></span>
             </div>
-            <div class="caption">A visual preview inspired by the current game UI</div>
+            <div class="hero-phone" role="group" aria-label="Real in-game screenshots in three themes">
+              <img class="hero-phone-image" data-shot-theme="moonlight" src="assets/website-hero-moonlight.webp" width="1024" height="2048" alt="Actual gameplay screen in the Moonlight theme, with a black background, turquoise X and lavender O" decoding="async" fetchpriority="high" aria-hidden="false">
+              <img class="hero-phone-image" data-shot-theme="orchid" src="assets/website-hero-orchid.webp" width="1024" height="2048" alt="Actual gameplay screen in the Orchid dark-purple theme with pink O marks" decoding="async" loading="lazy" aria-hidden="true">
+              <img class="hero-phone-image" data-shot-theme="paper" src="assets/website-hero-light.webp" width="1024" height="2048" alt="Actual gameplay screen in a calm, light Paper theme" decoding="async" loading="lazy" aria-hidden="true">
+            </div>
+            <div class="caption">Screens captured from the current game</div>
             <div class="theme-controls" role="group" aria-label="Preview different color themes">
               <button type="button" data-select-theme="moonlight" aria-pressed="true">Moonlight</button>
               <button type="button" data-select-theme="orchid" aria-pressed="false">Orchid</button>
@@ -115,6 +109,9 @@
       stage.querySelectorAll('[data-select-theme]').forEach(function(button){
         button.addEventListener('click',function(){
           stage.dataset.theme=button.dataset.selectTheme;
+          stage.querySelectorAll('[data-shot-theme]').forEach(function(shot){
+            shot.setAttribute('aria-hidden', String(shot.dataset.shotTheme !== button.dataset.selectTheme));
+          });
           stage.querySelectorAll('[data-select-theme]').forEach(function(other){
             other.setAttribute('aria-pressed',String(other===button));
           });
