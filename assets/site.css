@@ -21,7 +21,7 @@
 
 /* Screenshot-driven homepage hero: screenshots captured from the actual app.
    Keep all three 1024x2048 transparent WebP assets aligned in the same frame. */
-.site .showcase{isolation:isolate;min-height:620px;transition:background .55s ease,box-shadow .55s ease}
+.site .showcase{isolation:isolate;min-height:735px;transition:background .55s ease,box-shadow .55s ease}
 .site .showcase .glow-dot{z-index:3;pointer-events:none}
 .site .showcase .caption{z-index:4;bottom:88px;left:20px;right:20px;text-align:center;letter-spacing:.025em;pointer-events:none}
 .site .showcase .hero-ambient{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;z-index:0}
@@ -39,7 +39,7 @@
 .site .theme-controls{position:absolute;z-index:5;bottom:0;left:0;right:0;padding:20px 12px 26px;gap:9px;flex-wrap:wrap}
 .site .theme-controls button{min-height:40px;min-width:75px;transition:background .2s ease,color .2s ease,border-color .2s ease}
 .site .theme-controls button:focus-visible{outline:2px solid #39c7b6;outline-offset:3px}
-@media(max-width:620px){.site .showcase{min-height:510px}.site .hero-phone{height:460px;width:min(300px,76%);margin-top:16px}.site .showcase .caption{bottom:84px}}
+@media(max-width:620px){.site .showcase{min-height:625px}.site .hero-phone{height:465px;width:min(300px,76%);margin-top:16px}.site .showcase .caption{bottom:84px}}
 @media(prefers-reduced-motion:reduce){.site .hero-phone-image,.site .showcase .hero-ambient span{transition:none!important}}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.site *, .site *:before,.site *:after{transition:none!important}}
